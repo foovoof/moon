@@ -1,0 +1,10 @@
+# Capability manifest: Research
+id: research
+name: "Research"
+version: "0.1.0"
+description: "TODO: describe the research capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

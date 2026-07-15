@@ -1,0 +1,10 @@
+# Capability manifest: Graph Analysis
+id: graph_analysis
+name: "Graph Analysis"
+version: "0.1.0"
+description: "TODO: describe the graph analysis capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

@@ -1,0 +1,10 @@
+# Capability manifest: Identity Resolution
+id: identity_resolution
+name: "Identity Resolution"
+version: "0.1.0"
+description: "TODO: describe the identity resolution capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

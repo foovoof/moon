@@ -1,0 +1,10 @@
+# Capability manifest: Entity Resolution
+id: entity_resolution
+name: "Entity Resolution"
+version: "0.1.0"
+description: "TODO: describe the entity resolution capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

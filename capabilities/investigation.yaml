@@ -1,0 +1,10 @@
+# Capability manifest: Investigation
+id: investigation
+name: "Investigation"
+version: "0.1.0"
+description: "TODO: describe the investigation capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

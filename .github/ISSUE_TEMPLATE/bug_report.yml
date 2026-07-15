@@ -1,0 +1,43 @@
+name: 🐛 تقرير خلل (Bug Report)
+description: الإبلاغ عن سلوك غير متوقع في المنصة (غير أمني — للثغرات الأمنية راجع SECURITY.md)
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        شكرًا لإبلاغك عن هذا الخلل. **لا تستخدم هذا النموذج للثغرات الأمنية** — راجع `SECURITY.md`.
+
+  - type: input
+    id: layer
+    attributes:
+      label: الطبقة/الوحدة المتأثرة
+      placeholder: "مثال: collectors/sources/telegram_collector.py"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: وصف الخلل
+      description: ما الذي حدث؟ وما الذي كان متوقعًا؟
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: خطوات إعادة الإنتاج
+      placeholder: |
+        1. ...
+        2. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: env
+    attributes:
+      label: البيئة
+      placeholder: "نظام التشغيل، إصدار Python/Node، الفرع/commit"
+    validations:
+      required: false

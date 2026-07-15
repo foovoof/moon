@@ -1,0 +1,10 @@
+# Workflow definition: Research
+id: research
+name: "Research"
+version: "0.1.0"
+steps:
+  - id: step_1
+    name: "TODO: define first step of research"
+    agent: null
+    inputs: {}
+    outputs: {}

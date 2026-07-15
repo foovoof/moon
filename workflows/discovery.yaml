@@ -1,0 +1,10 @@
+# Workflow definition: Discovery
+id: discovery
+name: "Discovery"
+version: "0.1.0"
+steps:
+  - id: step_1
+    name: "TODO: define first step of discovery"
+    agent: null
+    inputs: {}
+    outputs: {}

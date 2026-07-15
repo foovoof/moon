@@ -1,0 +1,40 @@
+# syntax=docker/dockerfile:1
+FROM python:3.11-slim AS base
+WORKDIR /app
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+COPY pyproject.toml README.md ./
+COPY core ./core
+COPY normalizers ./normalizers
+COPY domain ./domain
+COPY models ./models
+COPY utils ./utils
+COPY platform ./platform
+COPY intelligence ./intelligence
+COPY collectors ./collectors
+COPY analyzers ./analyzers
+COPY graph ./graph
+COPY knowledge ./knowledge
+COPY agents ./agents
+COPY tools ./tools
+COPY processors ./processors
+COPY connectors ./connectors
+COPY workflows ./workflows
+COPY contracts ./contracts
+COPY capabilities ./capabilities
+COPY security ./security
+COPY policy_engine ./policy_engine
+COPY observability ./observability
+COPY config ./config
+COPY apps ./apps
+
+RUN pip install --no-cache-dir ".[graph]"
+
+FROM base AS dev
+RUN pip install --no-cache-dir ".[dev]"
+CMD ["uvicorn", "apps.api.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+
+FROM base AS production
+EXPOSE 8000
+CMD ["uvicorn", "apps.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

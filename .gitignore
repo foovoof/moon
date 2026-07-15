@@ -31,3 +31,26 @@ lerna-debug.log*
 
 # misc
 .DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+.secrets.baseline
+
+# Docker volumes / local data
+infrastructure/**/*.local.yml
+
+# Backups / archives
+*.backup
+*.bak
+*.tar.gz
+*.zip

@@ -1,0 +1,8 @@
+# Policy: Retention Policy
+policy_id: retention_policy
+name: "Retention Policy"
+version: "0.1.0"
+status: "draft"
+owner: governance
+rules: []
+references: []

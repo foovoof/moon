@@ -1,0 +1,10 @@
+# Capability manifest: Extraction
+id: extraction
+name: "Extraction"
+version: "0.1.0"
+description: "TODO: describe the extraction capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

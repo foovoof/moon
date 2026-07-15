@@ -1,0 +1,10 @@
+# Capability manifest: Tracking
+id: tracking
+name: "Tracking"
+version: "0.1.0"
+description: "TODO: describe the tracking capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

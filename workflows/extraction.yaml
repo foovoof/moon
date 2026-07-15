@@ -1,0 +1,10 @@
+# Workflow definition: Extraction
+id: extraction
+name: "Extraction"
+version: "0.1.0"
+steps:
+  - id: step_1
+    name: "TODO: define first step of extraction"
+    agent: null
+    inputs: {}
+    outputs: {}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🔒 الإبلاغ عن ثغرة أمنية
+    url: https://github.com/OWNER/moon/security/policy
+    about: يرجى عدم فتح Issue علنية للثغرات الأمنية — راجع SECURITY.md
+  - name: 💬 نقاش عام
+    url: https://github.com/OWNER/moon/discussions
+    about: للأسئلة العامة والنقاشات المفتوحة حول المشروع

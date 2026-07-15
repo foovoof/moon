@@ -1,0 +1,10 @@
+# Capability manifest: Reporting
+id: reporting
+name: "Reporting"
+version: "0.1.0"
+description: "TODO: describe the reporting capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

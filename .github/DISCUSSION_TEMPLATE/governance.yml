@@ -1,0 +1,23 @@
+title: "[Governance]: "
+labels: ["governance"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        استخدم هذا القالب لمناقشة تغييرات في `governance/`, `GOVERNANCE.md`,
+        أو `STANDARDS.md`. راجع سياسة التصعيد في `GOVERNANCE.md` قبل الفتح.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: السياق
+      description: ما السياسة/المعيار المتأثر؟
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: التغيير المقترح
+    validations:
+      required: true

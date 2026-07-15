@@ -1,0 +1,10 @@
+# Capability manifest: Review
+id: review
+name: "Review"
+version: "0.1.0"
+description: "TODO: describe the review capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

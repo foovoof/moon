@@ -1,0 +1,89 @@
+version: "3.9"
+
+# Moon — بيئة الإنتاج/التشغيل المحلي الكامل للخدمات المساعدة.
+# ملاحظة: تطبيق الحافة (apps/api, apps/web) يُنشر عبر Cloudflare
+# Pages/Workers ولا يُشغَّل هنا؛ هذا الملف مخصص لخدمات البيانات
+# والبنية التحتية التي تحتاجها منصة Moon الاستخباراتية (Python core).
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.api
+    image: moon-api:latest
+    container_name: moon-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - neo4j
+    networks:
+      - moon-net
+
+  worker:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.worker
+    image: moon-worker:latest
+    container_name: moon-worker
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - moon-net
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: moon-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-moon}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-moon}
+      POSTGRES_DB: ${POSTGRES_DB:-moon}
+    volumes:
+      - moon_postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    networks:
+      - moon-net
+
+  redis:
+    image: redis:7-alpine
+    container_name: moon-redis
+    restart: unless-stopped
+    volumes:
+      - moon_redis_data:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - moon-net
+
+  neo4j:
+    image: neo4j:5-community
+    container_name: moon-neo4j
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: ${NEO4J_AUTH:-neo4j/moonpassword}
+    volumes:
+      - moon_neo4j_data:/data
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - moon-net
+
+networks:
+  moon-net:
+    driver: bridge
+
+volumes:
+  moon_postgres_data:
+  moon_redis_data:
+  moon_neo4j_data:

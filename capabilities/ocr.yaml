@@ -1,0 +1,10 @@
+# Capability manifest: Ocr
+id: ocr
+name: "Ocr"
+version: "0.1.0"
+description: "TODO: describe the ocr capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []

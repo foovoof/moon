@@ -1,0 +1,35 @@
+name: ✨ طلب ميزة (Feature Request)
+description: اقترح ميزة أو تحسينًا جديدًا لمنصة Moon
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: المشكلة التي تحلّها هذه الميزة
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: الحل المقترح
+      description: أي طبقة/وحدة تتأثر؟ (core, collectors, agents, apps...)
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: بدائل تم النظر فيها
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: governance
+    attributes:
+      label: هل تتطلب هذه الميزة مراجعة حوكمة؟
+      options:
+        - label: تُضيف/تُعدّل سياسة في governance/policies/
+        - label: تُضيف مصدر بيانات جديد (collector/connector) يحتاج مراجعة قانونية
+        - label: لا شيء من السابق

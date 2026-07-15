@@ -1,0 +1,50 @@
+version: "3.9"
+
+# Moon — تجاوزات بيئة التطوير المحلي (Hot-reload, أدوات تصحيح, منافذ إضافية).
+# التشغيل: docker compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.api
+      target: dev
+    volumes:
+      - .:/app:cached
+    environment:
+      ENVIRONMENT: development
+      LOG_LEVEL: debug
+    command: ["uvicorn", "apps.api.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+
+  worker:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile.worker
+      target: dev
+    volumes:
+      - .:/app:cached
+    environment:
+      ENVIRONMENT: development
+      LOG_LEVEL: debug
+
+  postgres:
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: moon_dev
+      POSTGRES_PASSWORD: moon_dev
+      POSTGRES_DB: moon_dev
+
+  # واجهة إدارة اختيارية لـ Redis عند التطوير المحلي
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: moon-redis-commander
+    restart: unless-stopped
+    environment:
+      REDIS_HOSTS: local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - moon-net

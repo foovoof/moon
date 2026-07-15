@@ -1,0 +1,10 @@
+# Capability manifest: Discovery
+id: discovery
+name: "Discovery"
+version: "0.1.0"
+description: "TODO: describe the discovery capability."
+inputs: []
+outputs: []
+required_permissions: []
+agents: []
+tools: []
