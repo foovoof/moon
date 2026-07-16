@@ -26,7 +26,7 @@ dependencies = [
     "networkx>=3.3,<4",
     "PyYAML>=6.0.3,<7",
     "python-dotenv>=1.2.2,<2",
-    "structlog>=24.1,<25",
+    "structlog>=26.1.0,<27",
     "tenacity>=8.3,<9",
 ]
 
