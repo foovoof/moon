@@ -46,7 +46,7 @@ graph = [
     "neo4j>=6.2.0,<7",
 ]
 nlp = [
-    "spacy>=3.7,<4",
+    "spacy>=3.8.14,<4",
 ]
 
 [project.urls]
