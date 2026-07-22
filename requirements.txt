@@ -23,4 +23,4 @@ ruff>=0.15.21,<1
 black>=24.4,<25
 mypy>=1.10,<2
 import-linter>=2.0,<3
-pre-commit>=3.7,<4
+pre-commit>=4.6.1,<5
